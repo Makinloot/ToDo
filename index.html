@@ -16,34 +16,10 @@
             <hr>
             <div class="list__container">
                 <div class="input__wrapper">
-                    <input class="input" type="text" id="input" autocomplete="off">
-                    <button class="button add__button" id="add-todo">add plan</button>
+                    <input class="input" type="text" id="input" autocomplete="off" maxlength="25">
+                    <button class="button add__button" id="add-todo" onclick="addToDo()">add plan</button>
                 </div>
                 <div class="list__wrapper">
-                    <li class="list__item">
-                        <p class="list__paragraph">Todo List</p>
-                        <button class="button list__delete">
-                            <img src="images/delete.png" alt="delete-icon">   
-                        </button>
-                    </li>
-                    <li class="list__item">
-                        <p class="list__paragraph">Todo List</p>
-                        <button class="button list__delete">
-                            <img src="images/delete.png" alt="delete-icon">   
-                        </button>
-                    </li>
-                    <li class="list__item">
-                        <p class="list__paragraph">Todo List</p>
-                        <button class="button list__delete">
-                            <img src="images/delete.png" alt="delete-icon">   
-                        </button>
-                    </li>
-                    <li class="list__item">
-                        <p class="list__paragraph">Todo List</p>
-                        <button class="button list__delete">
-                            <img src="images/delete.png" alt="delete-icon">   
-                        </button>
-                    </li>
                 </div>
                 <button class="button reset__list">reset</button>
             </div>
