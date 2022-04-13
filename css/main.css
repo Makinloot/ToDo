@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    list-style: none;
+}
+.container {
+    width: min(100% - 1rem, 700px);
+    margin: 0 auto;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+
+.list__container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.input {
+    padding: .8rem;
+}
+.add__button {
+    height: 47.6px;
+}
+
+.list__wrapper {
+    background-color: brown;
+}
+.list__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.list__item:nth-child(odd) {
+    background: rgb(184, 150, 150);
+}
