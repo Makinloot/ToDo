@@ -5,13 +5,15 @@ const wrapper = document.querySelector(".list__wrapper");
 document.addEventListener('DOMContentLoaded', returnLocalStorage);
 
 function addToDo() {
+  const error = document.getElementById('error');
   let value = input.value;
   // IF INPUT VALUE IS EMPTY WILL NOT ADD LIST ITEM
   if (input.value == "") {
-    console.log("red");
+    error.innerText = 'List is empty!';
   } else {
     saveToLocalStorage(value);
     createListItem(value);
+    error.innerText = '';
   }
 };
 
@@ -47,7 +49,7 @@ function resetList() {
   removeLocalStorage(wrapper);
   wrapper.innerHTML = '';
 }
-
+// SAVES DATA TO LOCAL STORAGE
 function saveToLocalStorage(value) {
   let todos;
   if(localStorage.getItem('todos') === null) {
@@ -60,7 +62,7 @@ function saveToLocalStorage(value) {
   localStorage.setItem('todos', JSON.stringify(todos));
 
 }
-
+// DISPLAYS DATA ON SCREEN FROM LOCAL STORAGE
 function returnLocalStorage() {
   let todos;
   if(localStorage.getItem('todos') === null) {
@@ -73,7 +75,7 @@ function returnLocalStorage() {
     createListItem(todo);
   })
 }
-
+// REMOVES SAVED DATA IN LOCAL STORAGE
 function removeLocalStorage(parent) {
   let todos;
   if(localStorage.getItem('todos') === null) {
@@ -87,6 +89,3 @@ function removeLocalStorage(parent) {
   todos.splice(todos.indexOf(wrapperOfChild), wrapperChildren);
   localStorage.setItem('todos', JSON.stringify(todos));
 }
-
-
-console.log(wrapper.childNodes.length);

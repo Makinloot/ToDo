@@ -39,6 +39,7 @@ hr {
     text-align: center;
 }
 .input__wrapper {
+    position: relative;
     margin: 1rem 0;
     display: flex;
     justify-content: center;
@@ -51,7 +52,16 @@ hr {
     border: none;
     border-radius: .5rem 0 0 .5rem;
 }
-
+.input__error {
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(201, 77, 39);
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 80%;
+}
  /* BUTTON STYLES */
 
 .button {
