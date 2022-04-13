@@ -1,3 +1,9 @@
+:root {
+    --clr-gold:rgb(207, 189, 28);
+    --clr-lightgold:rgb(243, 221, 28);
+    --bg-green:rgb(8, 139, 172);
+    --bg-lighgreen:rgb(11, 155, 212);
+}
 * {
     margin: 0;
     padding: 0;
@@ -5,40 +11,109 @@
     font-size: 100%;
     list-style: none;
 }
+body {
+    background-image: linear-gradient(rgb(34, 73, 133),rgb(0, 22, 117));
+    height: 100vh;
+}
 .container {
     width: min(100% - 1rem, 700px);
     margin: 0 auto;
 }
-
+.wrapper {
+    padding: 1rem 0;
+}
 .heading {
+    margin: 1rem 0;
     text-align: center;
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
+    color: var(--clr-gold);
 }
-
-
+hr {
+    border: 1px solid rgb(124, 124, 124);
+}
 .list__container {
     width: 90%;
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
 }
-
+.input__wrapper {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .input {
-    padding: .8rem;
+    padding: .5rem;
+    outline: none;
+    border: none;
+    border-radius: .5rem 0 0 .5rem;
+}
+
+ /* BUTTON STYLES */
+
+.button {
+    padding: .3rem .5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--clr-gold);
+    border: none;
+    cursor: pointer;
+    background-color: var(--bg-green);
+    border-radius: .5rem;
+}
+.button:hover {
+    background-color: var(--bg-lighgreen);
+    color: var(--clr-lightgold);
 }
 .add__button {
-    height: 47.6px;
+    height: 34px;
+    margin: 5px 0;
+    border-radius: 0 .5rem .5rem 0;
+}
+.list__delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(165, 26, 26);
+}
+.list__delete:hover {
+    background-color: rgb(197, 27, 27);
+}
+.reset__list {
+    margin: 1rem 0;
+    padding: .5rem 1.5rem;
 }
 
-.list__wrapper {
-    background-color: brown;
-}
+ /* LIST STYLES */
+
 .list__item {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: 0;
+    padding: .2rem 1rem;
+    background-color: rgb(56, 78, 143);
+    color: var(--clr-lightgold);
+    font-size: 1.2rem;
 }
 .list__item:nth-child(odd) {
-    background: rgb(184, 150, 150);
+    background-color: rgb(124, 124, 124);
+}
+.list__item:last-child {
+    border-radius: 0 0 .5rem .5rem;
+}
+.list__item:first-child {
+    border-radius: .5rem .5rem 0 0;
+}
+
+@media (max-width: 360px) {
+    .input {
+        border-radius: .5rem;
+    }
+    .add__button {
+        border-radius: .5rem;
+    }
 }
