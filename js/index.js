@@ -31,6 +31,7 @@ function createListItem(listValue) {
 // GIVES DELETE BUTTON FUNCTION TO DELETE LIST
   const delBtn = li.getElementsByClassName('list__delete')[0];
   delBtn.addEventListener('click', () => {
+    // removeLocalStorage(wrapper);
     deleteListItem(wrapper, li);
   });
   input.value = "";
@@ -38,10 +39,12 @@ function createListItem(listValue) {
 
 // DELETES LIST ITEM
 function deleteListItem(parent, child) {
+  removeLocalStorage(wrapper);
   parent.removeChild(child);
 };
 // CLEARS EVERY LIST ITEM FROM LIST
 function resetList() {
+  removeLocalStorage(wrapper);
   wrapper.innerHTML = '';
 }
 
@@ -70,3 +73,20 @@ function returnLocalStorage() {
     createListItem(todo);
   })
 }
+
+function removeLocalStorage(parent) {
+  let todos;
+  if(localStorage.getItem('todos') === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+
+  const wrapperOfChild = parent.children[0].innerText;
+  const wrapperChildren = wrapper.childNodes.length;
+  todos.splice(todos.indexOf(wrapperOfChild), wrapperChildren);
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+
+console.log(wrapper.childNodes.length);
