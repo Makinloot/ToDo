@@ -1,15 +1,16 @@
 const input = document.getElementById("input");
 let value = input.value;
 const wrapper = document.querySelector(".list__wrapper");
-
+// LOADS DATA FROM LOCAL STORAGE ON LOAD
 document.addEventListener("DOMContentLoaded", returnLocalStorage);
-
+// SUBMITS LIST ON ENTER CLICK IN INPUT
 input.addEventListener('keyup', (e) => {
   e.preventDefault();
   if(e.keyCode == 13){
     addToDo();
   }
 })
+// ADDS PLAN IN TODO LIST
 function addToDo() {
   const error = document.getElementById("error");
   let value = input.value;
